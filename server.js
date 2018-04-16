@@ -4,7 +4,7 @@ const http = require('http');
 const config = require('./config');
 const bodyParser = require('body-parser');
 const app = express();
-var scanQueue = [];
+const scanQueue = [];
 
 // app config
 app.set('port', config.port);
