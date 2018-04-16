@@ -1,0 +1,25 @@
+{
+  "name": "insights-ocp-master",
+  "version": "1.0.0",
+  "description": "Openshift application for handling image scan scheduling.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedhatInsights/insights-ocp-master.git"
+  },
+  "author": "Jeremy Crafts, Richard Brantley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RedhatInsights/insights-ocp-master/issues"
+  },
+  "homepage": "https://github.com/RedhatInsights/insights-ocp-master#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "http": "0.0.0",
+    "body-parser": "^1.18.2"
+  }
+}
