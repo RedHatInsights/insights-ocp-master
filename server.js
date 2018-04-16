@@ -51,7 +51,17 @@ app.post('/queue/:id', bodyParser.json({limit: '50mb'}), (req, res) => {
     		// Response ended
     		res.on('end', function(){
     			let obj = JSON.parse(output);
-    			let hoursElapsed = '';
+
+    			// we received a response from the API but it has never been scanned
+    			if !obj || !( 'created_at' in obj.hasProperty() ){
+    				console.log(`Queue added for image ID $(req.params.id}...`));
+    				scanQueue.push(req.params.id);
+    				return res.status(201).send();
+    			}
+
+    			let reportTime = new Date(obj.created_at);
+    			let currTime = new Date();
+    			let hoursElapsed = Math.abs(date1 - date2) / 36e5;
     			if ( hoursElapsed < 24 ){
     				console.log(`Queue added for image ID ${req.params.id}...`);
 			    	scanQueue.push(req.params.id);
